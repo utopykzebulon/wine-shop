@@ -1,0 +1,267 @@
+/* ===============================
+   ADMIN PANEL — La Cave de Moustiers
+   Palette : Bordeaux (#7a0010), Doré (#d4af37),
+             Crème (#f8f5f2), Gris anthracite (#2b2b2b)
+   =============================== */
+
+/* --- BASE --- */
+body {
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  background: #f8f5f2;
+  color: #2b2b2b;
+}
+
+h1, h2 {
+  color: #7a0010;
+  font-weight: 600;
+  margin: 0 0 20px;
+}
+
+/* --- CONTAINER --- */
+.container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ===============================
+   HEADER & FOOTER
+   =============================== */
+
+.ant-layout-header {
+  background: #7a0010 !important;
+  border-bottom: 3px solid #d4af37;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 40px;
+  z-index: 1000;
+}
+
+.ant-layout-header h1,
+.ant-layout-header .ant-typography {
+  color: #fff !important;
+  margin: 0;
+  font-weight: 600;
+}
+
+.ant-btn.ant-btn-primary.ant-btn-dangerous {
+  background: #d4af37;
+  border-color: #d4af37;
+  color: #2b2b2b;
+  font-weight: 600;
+}
+.ant-btn.ant-btn-primary.ant-btn-dangerous:hover {
+  background: #b9972c;
+  border-color: #b9972c;
+  color: #fff;
+}
+
+/* FOOTER */
+.ant-layout-footer {
+  text-align: center;
+  padding: 16px;
+  background: #7a0010;
+  color: #fff;
+  font-size: 0.9rem;
+  border-top: 3px solid #d4af37;
+  margin-top: 40px;
+}
+
+/* ===============================
+   TOOLBAR
+   =============================== */
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.search-bar {
+  min-width: 220px;
+}
+
+.ant-select-selector {
+  border-radius: 6px !important;
+}
+
+/* ===============================
+   TABLE
+   =============================== */
+
+.ant-table {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.ant-table-thead > tr > th {
+  background: #7a0010 !important;
+  color: #fff !important;
+  font-weight: 600;
+  text-align: left;
+}
+
+.ant-table-tbody > tr:hover > td {
+  background: #fff5f6 !important;
+}
+
+/* ===============================
+   IMAGES & PLACEHOLDER
+   =============================== */
+
+.ant-image {
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.ant-image-img {
+  object-fit: cover !important;
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 6px;
+  border: 1px solid #eee;
+}
+
+.placeholder {
+  width: 60px;
+  height: 60px;
+  background: #f1efec;
+  border-radius: 6px;
+  border: 1px dashed #d4af37;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.placeholder img {
+  opacity: 0.45;
+  width: 32px;
+  height: 32px;
+  filter: grayscale(1);
+}
+
+/* ===============================
+   MODAL & FORM
+   =============================== */
+
+.ant-modal-header {
+  background: #f8f5f2;
+  border-bottom: 2px solid #d4af37;
+}
+.ant-modal-title {
+  color: #7a0010;
+  font-weight: 600;
+}
+.ant-modal-footer {
+  border-top: none;
+  background: #f8f5f2;
+}
+
+.ant-form-item-label > label {
+  font-weight: 500;
+  color: #2b2b2b;
+}
+
+.ant-input:focus,
+.ant-select-focused .ant-select-selector,
+.ant-input-number:focus-within {
+  border-color: #7a0010 !important;
+  box-shadow: 0 0 0 2px rgba(122, 0, 16, 0.15) !important;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #7a0010;
+  border-color: #7a0010;
+}
+
+/* ===============================
+   UPLOAD (DRAG & DROP)
+   =============================== */
+
+.ant-upload {
+  border: 2px dashed #d4af37;
+  background: #fffdfa;
+  border-radius: 10px;
+  padding: 20px;
+  transition: all 0.25s ease;
+}
+.ant-upload:hover {
+  border-color: #7a0010;
+  background: #fff8f8;
+}
+
+.ant-upload-drag-icon {
+  color: #7a0010;
+  font-size: 2rem;
+}
+.ant-upload-text {
+  color: #2b2b2b;
+  font-weight: 500;
+}
+
+/* --- Upload List --- */
+.ant-upload-list-picture .ant-upload-list-item {
+  border-radius: 6px;
+  border: 1px solid #e9e7e4;
+}
+.ant-upload-list-item-thumbnail img {
+  border-radius: 6px;
+}
+
+/* ===============================
+   BUTTONS
+   =============================== */
+
+.ant-btn-primary {
+  background: #7a0010;
+  border-color: #7a0010;
+}
+.ant-btn-primary:hover {
+  background: #5e0012;
+  border-color: #5e0012;
+}
+.ant-btn-default:hover {
+  color: #7a0010;
+  border-color: #7a0010;
+}
+
+/* ===============================
+   IMAGE PREVIEW (Form)
+   =============================== */
+
+.image-preview {
+  text-align: center;
+  margin: 10px 0 20px;
+}
+.image-preview img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid #d4af37;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+@media (max-width: 768px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .container {
+    margin: 20px;
+    padding: 15px;
+  }
+  .ant-layout-header {
+    padding: 10px 20px;
+  }
+}

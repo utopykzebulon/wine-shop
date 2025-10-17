@@ -1,0 +1,53 @@
+/* ===========================
+   PAGE VALIDATION D’ÂGE
+   =========================== */
+.agegate-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: url("/assets/brand/background.jpg") center/cover no-repeat,
+    #7a0010; /* couleur de secours Bordeaux */
+}
+
+/* Carte centrale */
+.age-card {
+  max-width: 420px;
+  text-align: center;
+  padding: 40px 30px;
+  background: #f8f5f2; /* crème au lieu de blanc transparent */
+  border: 3px solid #d4af37; /* doré */
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  color: #2b2b2b; /* texte anthracite */
+}
+
+/* Titres et paragraphes */
+.age-card h1,
+.age-card .ant-typography {
+  color: #7a0010 !important; /* Bordeaux */
+}
+
+.age-card strong {
+  color: #7a0010;
+}
+
+/* Checkbox */
+.ant-checkbox-wrapper {
+  color: #2b2b2b !important;
+}
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #7a0010 !important;
+  border-color: #7a0010 !important;
+}
+
+/* Bouton principal */
+.age-card .ant-btn-primary {
+  background-color: #7a0010 !important;
+  border-color: #7a0010 !important;
+  font-weight: 600;
+}
+.age-card .ant-btn-primary:hover {
+  background-color: #b90018 !important;
+  border-color: #b90018 !important;
+}

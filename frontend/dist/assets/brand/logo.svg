@@ -1,0 +1,20 @@
+<svg width="320" height="60" viewBox="0 0 320 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#92400e" offset="0"/>
+      <stop stop-color="#78350f" offset="1"/>
+    </linearGradient>
+  </defs>
+  <rect rx="10" ry="10" width="60" height="60" fill="url(#g)"/>
+  <g transform="translate(8,8)">
+    <circle cx="22" cy="22" r="18" fill="#fff" opacity="0.12"/>
+    <path d="M22 7c4 7-3 10-3 16 0 3 2 5 3 5s3-2 3-5c0-6-7-9-3-16z" fill="#fff"/>
+    <circle cx="22" cy="42" r="3.5" fill="#fff" opacity="0.9"/>
+  </g>
+  <text x="76" y="28" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="18" fill="#111827" font-weight="700">
+    La Cave de Moustiers
+  </text>
+  <text x="76" y="46" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="13" fill="#6b7280">
+    by L’Épicerie du Coin
+  </text>
+</svg>

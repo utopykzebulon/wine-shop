@@ -1,0 +1,405 @@
+/* ===========================
+   🌿 GLOBAL
+=========================== */
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: #faf9f7;
+  color: #222;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===========================
+   🏛 HEADER
+=========================== */
+.ant-layout-header {
+  background: #fff !important;
+  border-bottom: 1px solid #e6e3df;
+}
+
+/* ===========================
+   🖼️ BANNIÈRE
+=========================== */
+.banner-intro {
+  position: relative;
+  height: 340px;
+  background: url("/img/epicerie.webp") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+.banner-intro .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+.banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 0 20px;
+}
+.banner-content h2 {
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 2rem;
+}
+.banner-content p {
+  color: #eee;
+  opacity: 0.9;
+  font-size: 1.05rem;
+}
+
+/* ===========================
+   📊 CATÉGORIES & FILTRES
+=========================== */
+.category-filters-wrap {
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #e6e3df;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+.category-menu {
+  background: #fff !important;
+  border-bottom: 1px solid #e6e3df !important;
+  display: flex;
+  justify-content: center;
+}
+.category-menu .ant-menu-item {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #333 !important;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+.category-menu .ant-menu-item-selected {
+  color: #7a0010 !important;
+  border-bottom: 2px solid #7a0010 !important;
+}
+.category-menu .ant-menu-item:hover {
+  color: #7a0010 !important;
+  border-bottom: 2px solid #c5a55a !important;
+}
+
+.filters {
+  padding: 16px 24px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeSlide 0.4s ease both;
+}
+.filters .ant-select-selector,
+.filters .ant-input-affix-wrapper {
+  height: 42px !important;
+  display: flex;
+  align-items: center;
+  border-radius: 6px !important;
+}
+.filters .search-input { height: 42px; }
+.filters .ant-row { align-items: center !important; }
+
+@keyframes fadeSlide {
+  0% { opacity: 0; transform: translateY(15px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Résumé résultats */
+.result-summary {
+  margin: 24px auto 10px;
+  text-align: center;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* ===========================
+   🍷 GRILLE PRODUITS (vente en ligne)
+=========================== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  padding: 40px 0;
+}
+.product-card {
+  border: 1px solid #e6e3df;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.product-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 6px 14px rgba(197,165,90,.25);
+  border-color: #c5a55a;
+}
+.product-card h3 {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.product-card p {
+  color: #555;
+  font-size: 0.9rem;
+  margin: 0;
+}
+.product-card strong {
+  display: block;
+  color: #7a0010;
+  margin: 10px 0;
+}
+.product-card .ant-card-cover img {
+  transition: transform .4s ease;
+}
+.product-card:hover .ant-card-cover img {
+  transform: scale(1.05);
+}
+
+/* Placeholder image */
+.img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f0ee;
+  height: 220px;
+  border-radius: 10px 10px 0 0;
+  color:#777; font-size:.9rem;
+}
+
+/* ===========================
+   ➕ QUANTITÉ INLINE
+=========================== */
+.qty-inline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+}
+.qty-inline .ant-btn {
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+.qty-inline .ant-input-number {
+  width: 50px !important;
+  text-align: center;
+}
+
+/* ===========================
+   ⚙️ MODAL VIN (WineDetail)
+=========================== */
+.wine-detail-modal {
+  background: #fff;
+  padding: 24px 32px;
+  border-radius: 8px;
+}
+.wine-detail-modal .detail-tags {
+  margin: 10px 0 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.detail-price-modal { margin-top: 16px; }
+.detail-price-modal .price {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #7a0010;
+}
+
+/* Modal centré & fluide */
+.ant-modal {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  animation: modalFade .35s ease;
+}
+.ant-modal-body { overflow: visible !important; }
+@keyframes modalFade {
+  0% { opacity: 0; transform: translateY(-40%) scale(0.95); }
+  100% { opacity: 1; transform: translateY(-50%) scale(1); }
+}
+
+/* Bas du modal (actions) */
+.modal-actions {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-top: 1px solid #eee;
+  background: #faf9f7;
+}
+.qty-wrap { display: flex; align-items: center; gap: 6px; }
+
+/* ===========================
+   💬 NOTIFICATIONS
+=========================== */
+.ant-notification-notice-message {
+  font-weight: 600;
+  color: #7a0010 !important;
+}
+.ant-notification-notice-description { color: #555; }
+.ant-notification-notice {
+  border-left: 4px solid #c5a55a;
+  border-radius: 8px;
+}
+
+/* ===========================
+   🛒 FLOAT BUTTON (Panier)
+=========================== */
+.ant-float-btn { transition: all 0.2s ease-in-out; }
+.ant-float-btn:hover { background: #5e0012 !important; }
+
+/* ===========================
+   🎠 CARROUSEL EXCLUSIVITÉS
+   (react-slick + flèches AntD)
+=========================== */
+.exclusive-carousel {
+  position: relative;
+  background: linear-gradient(180deg, #f8f7f5 0%, #f2f0ec 100%);
+  padding: 40px 0 50px;
+  border-top: 2px solid #e6e3df;
+  border-bottom: 2px solid #e6e3df;
+  overflow: hidden;
+}
+
+/* wrap centré et marge interne pour flèches */
+.exclusive-slider-wrap {
+  padding: 0 70px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* slide slick -> centrer la card */
+.exclusive-slide {
+  padding: 0 12px;
+  display: flex !important;
+  justify-content: center;
+}
+
+/* CARD TAILLE FIXE */
+.exclusive-item {
+  width: 230px;
+  height: 340px;
+  background: #fff;
+  border: 1px solid #e6e3df;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,.08);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.exclusive-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(197,165,90,.3);
+}
+
+/* Image */
+.exclusive-img {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  background: #f3f2ef;
+  overflow: hidden;
+}
+.exclusive-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Bandeau exclusivité (en haut) */
+.exclusive-banner {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  background: rgba(122, 0, 16, 0.95);
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  padding: 6px 8px;
+  font-size: 0.85rem;
+  letter-spacing: 0.2px;
+}
+
+/* Placeholder si pas d'image */
+.exclusive-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #f3f2ef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* Infos */
+.exclusive-info {
+  text-align: center;
+  padding: 12px 10px;
+}
+.exclusive-info h4 {
+  margin: 6px 0 2px;
+  color: #222;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.exclusive-info p {
+  margin: 0;
+  color: #777;
+  font-size: 0.85rem;
+}
+
+/* Flèches (AntD Button utilisé en composant) */
+.carousel-arrow {
+  position: absolute;
+  top: 45%;
+  z-index: 5;
+  border-radius: 50%;
+  width: 46px; height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  color: #7a0010;
+  border: 1px solid #e6e3df;
+  box-shadow: 0 3px 8px rgba(0,0,0,.15);
+  transition: all .2s ease-in-out;
+}
+.carousel-arrow:hover { background: #7a0010; color: #fff; }
+.carousel-arrow.left { left: 10px; }
+.carousel-arrow.right { right: 10px; }
+
+/* ===========================
+   📱 RESPONSIVE
+=========================== */
+@media (max-width: 1024px) {
+  .filters { padding: 14px 16px 20px; }
+  .filters .ant-row { row-gap: 12px !important; }
+  .filters .ant-col { width: 100%; }
+  .filters .search-input { width: 100% !important; font-size: 1rem; }
+  .category-menu { overflow-x: auto; }
+
+  .exclusive-item { width: 200px; height: 320px; }
+  .exclusive-slider-wrap { padding: 0 40px; }
+}
+@media (max-width: 768px) {
+  .wine-detail-modal { padding: 16px 18px; }
+  .wine-detail-modal img { height: 260px !important; }
+  .wine-detail-modal .price { font-size: 1.3rem; }
+  .filters .ant-col { flex: 0 0 100%; max-width: 100%; }
+
+  .exclusive-item { width: 180px; height: 300px; }
+  .exclusive-slider-wrap { padding: 0 20px; }
+  .carousel-arrow { display: none; } /* flèches masquées sur mobile */
+}

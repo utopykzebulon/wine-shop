@@ -1,0 +1,51 @@
+# ----------------------------------------------------------
+# ✅ CONFIG MIXTE BACKEND PHP + FRONT REACT (MAMP + en ligne)
+# ----------------------------------------------------------
+
+RewriteEngine On
+RewriteBase /wine-shop/backend/public/
+
+# ----------------------------------------------------------
+# ✅ 1. Fix MIME types (évite "text/plain" pour JS)
+# ----------------------------------------------------------
+AddType application/javascript .js .mjs
+AddType text/css .css
+AddType application/json .json
+AddType application/wasm .wasm
+AddType image/svg+xml .svg
+AddType image/webp .webp
+
+# ----------------------------------------------------------
+# ✅ 2. Ne pas réécrire si fichier/dossier existe
+# ----------------------------------------------------------
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# ----------------------------------------------------------
+# ✅ 3. Rediriger les appels API vers index.php (backend PHP)
+# ----------------------------------------------------------
+RewriteCond %{REQUEST_URI} ^/wine-shop/backend/public/(api|wines|alcohols|products)
+RewriteRule ^ index.php [QSA,L]
+
+# ----------------------------------------------------------
+# ✅ 4. Tout le reste (routes React) -> index.html (front buildé)
+# ----------------------------------------------------------
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]
+
+# ----------------------------------------------------------
+# ✅ 5. (Optionnel) GZIP + cache
+# ----------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+  AddOutputFilterByType DEFLATE application/javascript application/json
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType image/* "access plus 1 year"
+</IfModule>
